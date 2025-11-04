@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
+    "build": "netlify-lambda build netlify/functions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,5 +15,8 @@
     "axios": "^1.13.1",
     "express": "^5.1.0",
     "ioredis": "^5.8.2"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^2.0.16"
   }
 }
