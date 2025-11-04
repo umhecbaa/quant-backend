@@ -1,6 +1,5 @@
 const Redis = require('ioredis');
 
-// 配置Redis连接
 const redis = new Redis({
   host: process.env.REDIS_ENDPOINT,
   port: process.env.REDIS_PORT,
@@ -8,8 +7,7 @@ const redis = new Redis({
 });
 
 exports.handler = async (event, context) => {
-  // 仅处理GET请求和/api/stock-data路径
-  if (event.httpMethod !== 'GET' || event.path !== '/api/stock-data') {
+  if (event.httpMethod !== 'GET' || event.path !== '/.netlify/functions/api/api/stock-data') {
     return {
       statusCode: 404,
       body: JSON.stringify({ error: '接口路径或方法不匹配' })
